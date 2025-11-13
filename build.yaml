@@ -1,7 +1,19 @@
-# This file generates the GitHub Actions matrix
-# For simple board + shield combinations, add them
-# to the top level board and shield arrays, for more
-# control, add individual board + shield combinations to
-# the `include` property, e.g:
-#
-board: [ "glove80_lh", "glove80_rh" ]
+include:
+    - board: glove80_lh
+      cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+      artifact-name: glove80-left
+    - board: glove80_rh
+      cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+      artifact-name: glove80-right
+    - board: seeeduino_xiao_ble
+      shield: glove80_dongle dongle_screen
+      artifact-name: dongle
+    - board: glove80_rh
+      shield: settings_reset
+      artifact-name: left-reset
+    - board: glove80_rh
+      shield: settings_reset
+      artifact-name: right-reset
+    - board: seeeduino_xiao_ble
+      shield: settings_reset
+      artifact-name: dongle-reset
