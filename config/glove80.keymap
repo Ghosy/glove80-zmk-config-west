@@ -29,47 +29,6 @@
         bindings = <&mo layer>, <&to layer>; \
 )
 
-/* Automatically generated layer name #define */
-
-#define LAYER_Base 0
-#define LAYER_Lower 1
-#define LAYER_Malalta 2
-#define LAYER_Magic 3
-
-/* To deal with the situation where there is no Lower layer, to keep &lower happy */
-
-#ifndef LAYER_Lower
-
-#define LAYER_Lower 0
-
-#
-
-endif {
-    /
-
-    behaviors {
-        ZMK_TD_LAYER(lower, LAYER_Lower)
-    };
-};
-
-/ {
-};
-
-/ {
-    behaviors {
-        magic: magic {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MAGIC_HOLD_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&none>;
-        };
-    };
-};
-
-/* #define for key positions */
-
 #define POS_LH_T1 52
 #define POS_LH_T2 53
 #define POS_LH_T3 54
@@ -155,9 +114,7 @@ endif {
     combos {
         compatible = "zmk,combos";
 
-        // Malalta layer combo with less thumb movement
-
-        combo_MalaltaLH {
+        combo_NumFunLH {
             key-positions = <53 70>;
             bindings = <&mo 2>;
             layers = <0 1>;
@@ -165,7 +122,7 @@ endif {
 
         // Malalta layer combo with less thumb movement
 
-        combo_MalaltaRH {
+        combo_NumFunRH {
             key-positions = <73 74>;
             bindings = <&mo 2>;
             layers = <0 1>;
@@ -185,7 +142,7 @@ endif {
 &kp TAB               &kp SQT   &kp COMMA  &kp DOT    &kp P      &kp Y                                                                     &kp F   &kp G      &kp C      &kp R     &kp L     &kp SLASH
 &kp ESC               &kp A     &kp O      &kp E      &kp U      &kp I                                                                     &kp D   &kp H      &kp T      &kp N     &kp S     &kp MINUS
 &kp RALT              &kp SEMI  &kp Q      &kp J      &kp K      &kp X   &kp LCTRL  &mo 1      &kp LALT    &kp LALT  &kp LCTRL  &kp RET    &kp B   &kp M      &kp W      &kp V     &kp Z     &kp PG_UP
-&magic LAYER_Magic 0  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT          &kp BSPC   &kp LSHFT  &kp LGUI    &kp LGUI  &mo 1      &kp SPACE          &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp PG_DN
+&mo 3  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT          &kp BSPC   &kp LSHFT  &kp LGUI    &kp LGUI  &mo 1      &kp SPACE          &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp PG_DN
             >;
         };
 
@@ -197,7 +154,7 @@ endif {
 &trans                &kp LBKT  &kp LS(LBKT)  &kp LS(RBKT)  &kp RBKT  &none                                                        &none   &none      &none         &none          &kp RIGHT  &kp SCROLLLOCK
 &trans                &none     &kp LS(N9)    &kp LS(N0)    &kp BSLH  &none                                                        &none   &kp LEFT   &kp LS(FSLH)  &kp LS(EQUAL)  &kp EQUAL  &none
 &trans                &none     &none         &kp DOWN      &kp UP    &none   &kp SPACE  &trans  &trans    &trans  &trans  &trans  &none   &kp PG_UP  &kp PG_DN     &kp HOME       &kp END    &trans
-&magic LAYER_Magic 0  &trans    &trans        &trans        &trans            &kp DEL    &trans  &trans    &trans  &trans  &trans          &trans     &trans        &trans         &trans     &trans
+&mo 3  &trans    &trans        &trans        &trans            &kp DEL    &trans  &trans    &trans  &trans  &trans          &trans     &trans        &trans         &trans     &trans
             >;
         };
 
@@ -209,7 +166,7 @@ endif {
 &trans                &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                                                 &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &none
 &trans                &kp N1    &kp N2  &kp N3    &kp N4    &kp N5                                                    &kp N6     &kp N7    &kp N8    &kp N9    &kp N0    &none
 &kp F11               &kp F1    &kp F2  &kp F3    &kp F4    &kp F5     &none     &none  &none    &none  &none  &none  &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp F12
-&magic LAYER_Magic 0  &trans    &trans  &trans    &trans               &kp BSPC  &none  &none    &none  &none  &none             &trans    &trans    &trans    &trans    &none
+&mo 3  &trans    &trans  &trans    &trans               &kp BSPC  &none  &none    &none  &none  &none             &trans    &trans    &trans    &trans    &none
             >;
         };
 
