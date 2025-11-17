@@ -1,12 +1,12 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    - name: moergo-sc
+      url-base: https://github.com/moergo-sc
     - name: janpfischer
       url-base: https://github.com/janpfischer
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: moergo-sc
       revision: main
       import: app/west.yml
     - name: zmk-dongle-screen
