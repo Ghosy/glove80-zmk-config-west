@@ -8,12 +8,6 @@ include:
     - board: seeeduino_xiao_ble
       shield: glove80_dongle dongle_screen
       artifact-name: dongle
-    - board: glove80_rh
-      shield: settings_reset
-      artifact-name: left-reset
-    - board: glove80_rh
-      shield: settings_reset
-      artifact-name: right-reset
     - board: seeeduino_xiao_ble
       shield: settings_reset
       artifact-name: dongle-reset
